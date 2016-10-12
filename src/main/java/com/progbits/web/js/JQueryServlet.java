@@ -1,12 +1,14 @@
 package com.progbits.web.js;
 
 import aQute.bnd.annotation.component.Component;
-import com.google.common.io.ByteStreams;
+import com.progbits.web.ServletSetup;
+import com.progbits.web.SsWebUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Path;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,64 +20,30 @@ import org.slf4j.LoggerFactory;
  *
  * @author scarr
  */
-@Component(name="JQueryServlet", properties = { "alias=/jsjq", "name=JQueryServlet" }
-, provide = HttpServlet.class)
+@Component(name = "JQueryServlet", properties = {"alias=/jsjq", "name=JQueryServlet"}, provide = HttpServlet.class)
 public class JQueryServlet extends HttpServlet {
 
     private Logger log = LoggerFactory.getLogger(JQueryServlet.class);
 
+    private ServletSetup _servlet = null;
+
     private String _alias = "/jsjq";
 
-    public String getAlias() {
-        return _alias;
-    }
-
-    public void setAlias(String _alias) {
-        this._alias = _alias;
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        _servlet = new ServletSetup();
+        _servlet.setBasePath("/jsjq");
+        _servlet.setCacheTime(500);
+        _servlet.setContext(config.getServletContext());
+        _servlet.setLoader(this.getClass());
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String strPath = req.getPathInfo();
-
-        Path path;
-
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            URL url = getClass().getResource(strPath);
-
-            URLConnection conn = url.openConnection();
-            resp.addHeader("Cache-Control", "max-age=86400");
-            resp.setContentLength(conn.getContentLength());
-
-            String contentType = URLConnection.guessContentTypeFromName(strPath);
-            
-            if (contentType == null) {
-                if (strPath.endsWith("js")) {
-                    contentType = "application/javascript";
-                } else if (strPath.endsWith("css")) {
-                    contentType = "text/css";
-                } else if (strPath.endsWith("png")) {
-                    contentType = "image/png";
-                } else if (strPath.endsWith("jpg")) {
-                    contentType = "image/jpeg";
-                }
-            }
-            
-            resp.setContentType(contentType);
-            
-            log.debug("Content Type: " + contentType);
-            
-            long lSize;
-            try (InputStream is = conn.getInputStream()) {
-                lSize = ByteStreams.copy(is, resp.getOutputStream());
-            }
-            //resp.setContentType();
-
-            resp.setStatus(200);
-        } catch (Exception uex) {
-            log.error("doGet", uex);
+            SsWebUtils.sendFile(_servlet, "/jsjq", req, resp);
+        } catch (Exception ex) {
+            throw new ServletException(ex);
         }
-
     }
-
 }

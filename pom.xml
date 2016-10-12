@@ -5,14 +5,14 @@
     <groupId>com.progbits.web</groupId>
     <artifactId>JQueryServlet</artifactId>
     <packaging>bundle</packaging>
-    <version>3.0.0</version>
+    <version>2.2.4</version>
     <name>JQuery / DataTables / jQuery UI</name>
     <url>http://maven.apache.org</url>
     
     <description>
         Includes:
         
-        jquery 3.0.0
+        jquery 2.2.4
         jquery-ui 1.11.4
         datatables 1.10.12 with Buttons, Select, and other plugins
         bootstrap 3.3.6
@@ -29,9 +29,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jquery.version>3.0.0</jquery.version>
+        <jquery.version>2.2.4</jquery.version>
         <jquery-ui.version>1.11.4</jquery-ui.version>
         <DataTables.version>1.10.12</DataTables.version>
+	<jsPlumb.version>2.1.7</jsPlumb.version>
     </properties>
     
     <distributionManagement>
@@ -59,9 +60,9 @@
             <version>[2.3.0,3)</version>            
         </dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>18.0</version>
+            <groupId>com.progbits.web</groupId>
+            <artifactId>SsWebUtils</artifactId>
+            <version>1.1.0</version>
         </dependency>
     </dependencies>
 	
