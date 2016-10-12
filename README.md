@@ -15,7 +15,5 @@ These are all included in the bundle that is created, and can be accessed via th
 
         <script src="/jsjq/jsPlumb-2.1.7-min.js" ></script>
 
-        
-
-        
-
+	<script src="/jsjq/moment.min.js" ></script>        
+	<script src="/jsjq/fullcalendar/fullcalendar.min.js" ></script>        

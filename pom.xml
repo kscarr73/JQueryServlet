@@ -33,6 +33,8 @@
         <jquery-ui.version>1.11.4</jquery-ui.version>
         <DataTables.version>1.10.12</DataTables.version>
 	<jsPlumb.version>2.1.7</jsPlumb.version>
+	<fullcalendar.version>3.0.1</fullcalendar.version>
+	<moment.version>2.14.1</moment.version>
     </properties>
     
     <distributionManagement>
