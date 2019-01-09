@@ -1,6 +1,5 @@
 package com.progbits.web.js;
 
-import aQute.bnd.annotation.component.Component;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,13 +22,16 @@ import org.slf4j.LoggerFactory;
  *
  * @author scarr
  */
-@Component(name = "JQueryServlet", properties = {"alias=/jsjq", "name=JQueryServlet"}, provide = HttpServlet.class)
+@Component(name = "JQueryServlet",
+        property = {"alias=/jsjq", "name=JQueryServlet"},
+        service = {HttpServlet.class}
+)
 public class JQueryServlet extends HttpServlet {
 
     private Logger log = LoggerFactory.getLogger(JQueryServlet.class);
 
     private final DateTimeFormatter _dateHeader = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'");
-            
+
     private ServletSetup _servlet = null;
 
     private String _alias = "/jsjq";

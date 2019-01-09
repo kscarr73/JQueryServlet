@@ -5,20 +5,19 @@
     <groupId>com.progbits.web</groupId>
     <artifactId>JQueryServlet</artifactId>
     <packaging>bundle</packaging>
-    <version>2.2.4-1</version>
+    <version>3.3.1-1</version>
     <name>JQuery / DataTables / jQuery UI</name>
     <url>http://maven.apache.org</url>
     
     <description>
         Includes:
         
-        jquery 2.2.4
-        jquery-ui 1.11.4
-        datatables 1.10.12 with Buttons, Select, and other plugins
-        bootstrap 3.3.6
+        jquery 3.3.1
+        jquery-ui 1.12.1
+        datatables 1.10.18 with Buttons, Select, and other plugins
+        bootstrap 4.1.3
         
         &lt;link rel="stylesheet" type="text/css" href="/jsjq/jquery-ui/jquery-ui.min.css"&gt;
-        &lt;link rel="stylesheet" type="text/css" href="/jsjq/datatables/datatables.min.css"&gt;
         
         &lt;script src="/jsjq/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;          
         &lt;script src="/jsjq/jquery-ui/jquery-ui.min.js"&gt;&lt;/script&gt;
@@ -29,12 +28,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jquery.version>2.2.4</jquery.version>
-        <jquery-ui.version>1.11.4</jquery-ui.version>
-        <DataTables.version>1.10.12</DataTables.version>
-	<jsPlumb.version>2.1.7</jsPlumb.version>
-	<fullcalendar.version>3.0.1</fullcalendar.version>
-	<moment.version>2.14.1</moment.version>
+        <jquery.version>3.3.1</jquery.version>
+        <jquery-ui.version>1.12.1</jquery-ui.version>
+        <DataTables.version>1.10.18</DataTables.version>
+	<jsPlumb.version>2.8.6</jsPlumb.version>
+	<fullcalendar.version>3.9.0</fullcalendar.version>
+	<moment.version>2.23.0</moment.version>
     </properties>
     
     <distributionManagement>
@@ -57,14 +56,14 @@
             <version>1.7.7</version>
         </dependency>
         <dependency>
-            <groupId>biz.aQute.bnd</groupId>
-            <artifactId>annotation</artifactId>
-            <version>[2.3.0,3)</version>            
-        </dependency>
-        <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>5.0.0</version>
         </dependency>
     </dependencies>
 	
@@ -73,7 +72,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.5.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
