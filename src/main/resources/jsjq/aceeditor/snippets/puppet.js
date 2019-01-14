@@ -1,7 +1,8 @@
-define(function(require, exports, module) {
-"use strict";
-
-exports.snippetText = require("../requirejs/text!./puppet.snippets");
-exports.scope = "puppet";
-
-});
+define("ace/snippets/puppet",["require","exports","module"],function(e,t,n){"use strict";t.snippetText=undefined,t.scope="puppet"});                (function() {
+                    window.require(["ace/snippets/puppet"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            
