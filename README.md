@@ -13,6 +13,7 @@ These are all included in the bundle that is created, and can be accessed via th
 * ckeditor 5 11.2.0
 * DataTables 1.10.18
 * FullCalendar 3.9.0
+* JavaScript Tmpl
 
         <link href="/jsjq/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
@@ -27,3 +28,5 @@ These are all included in the bundle that is created, and can be accessed via th
 
 	<script src="/jsjq/moment.min.js" ></script>        
 	<script src="/jsjq/fullcalendar/fullcalendar.min.js" ></script>        
+	<script src="/jsjq/fileupload/js/jquery.fileupload.js" ></script>        
+	<script src="/jsjq/tmpl.min.js" ></script>        

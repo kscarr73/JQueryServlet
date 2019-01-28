@@ -5,7 +5,7 @@
     <groupId>com.progbits.web</groupId>
     <artifactId>JQueryServlet</artifactId>
     <packaging>bundle</packaging>
-    <version>3.3.1-1</version>
+    <version>3.3.1-2</version>
     <name>JQuery / DataTables / jQuery UI</name>
     <url>http://maven.apache.org</url>
     
