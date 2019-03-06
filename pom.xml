@@ -5,7 +5,7 @@
     <groupId>com.progbits.web</groupId>
     <artifactId>JQueryServlet</artifactId>
     <packaging>bundle</packaging>
-    <version>3.3.1-2</version>
+    <version>3.3.1-3</version>
     <name>JQuery / DataTables / jQuery UI</name>
     <url>http://maven.apache.org</url>
     
@@ -16,12 +16,14 @@
         jquery-ui 1.12.1
         datatables 1.10.18 with Buttons, Select, and other plugins
         bootstrap 4.1.3
+        JavaScript-Load-Image 2.20.1
         
         &lt;link rel="stylesheet" type="text/css" href="/jsjq/jquery-ui/jquery-ui.min.css"&gt;
         
         &lt;script src="/jsjq/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;          
         &lt;script src="/jsjq/jquery-ui/jquery-ui.min.js"&gt;&lt;/script&gt;
         &lt;script type="text/javascript" src="/jsjq/datatables/datatables.min.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="/jsjq/loadimage/load-image.all.min.js"&gt;&lt;/script&gt;
     </description>
     
     <properties>
